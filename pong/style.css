@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.zoekbalk {
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: linear-gradient(90deg, #023e8a, #00b4d8);
+    box-shadow: 0 0 10px #000000;
+}
+
+.paginas {
+    display: flex;
+    align-items: center;
+}
+
+.paginas p {
+    margin-left: 10px;
+}
