@@ -1,6 +1,6 @@
 const canvas = document.getElementById("pong")
 const ctx = canvas.getContext("2d")
-const fps = 120
+const fps = 60
 
 document.addEventListener("keydown", event => {
     console.log(event.keyCode)
