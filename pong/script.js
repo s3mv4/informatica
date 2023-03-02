@@ -71,13 +71,13 @@ function ballMovement() {
 
     if (ball.y + ball.yvelocity <= (paddle1.y + paddle1.height) &&
         (ball.y + ball.size) + ball.yvelocity >= paddle1.y &&
-        ball.x + ball.xvelocity <= (paddle1.x + paddle1.width)) { 
+        ball.x + ball.xvelocity <= (paddle1.x + paddle1.width)) {
         ball.xvelocity *= -1
     }
 
     if (ball.y + ball.yvelocity <= (paddle2.y + paddle2.height) &&
         (ball.y + ball.size) + ball.yvelocity >= paddle2.y &&
-        (ball.x + ball.size) + ball.xvelocity >= paddle2.x) { 
+        (ball.x + ball.size) + ball.xvelocity >= paddle2.x) {
         ball.xvelocity *= -1
     }
 
