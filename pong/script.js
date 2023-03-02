@@ -54,13 +54,13 @@ const paddle2 = {
     score: 0,
 }
 
-function drawRect(x, y, w, h, hex) {
-    ctx.fillStyle = hex
+function drawRect(x, y, w, h, color) {
+    ctx.fillStyle = color
     ctx.fillRect(x, y, w, h)
 }
 
-function drawText(x, y, text, size, hex) {
-    ctx.fillStyle = hex
+function drawText(x, y, text, size, color) {
+    ctx.fillStyle = color
     ctx.font = `${size}px sans-serif`
     ctx.fillText(text, x, y)
 }
