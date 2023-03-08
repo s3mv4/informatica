@@ -1,6 +1,7 @@
 const canvas = document.getElementById("pong")
 const ctx = canvas.getContext("2d")
 const fps = 60
+let gameActive = false
 
 document.addEventListener("keydown", event => {
     if (event.keyCode == 87) {
@@ -12,6 +13,14 @@ document.addEventListener("keydown", event => {
         paddle2.yvelocity = -4
     } else if (event.keyCode == 40) {
         paddle2.yvelocity = 4
+    }
+
+    if (!gameActive) {
+        if (event.keyCode == 32) {
+            gameActive = true
+            ball.xvelocity = 2
+            ball.yvelocity = 2
+        }
     }
 })
 
@@ -32,8 +41,8 @@ const ball = {
     x: canvas.width/2-25/2,
     y: canvas.height/2-25/2,
     size: 25,
-    xvelocity: 2,
-    yvelocity: 2,
+    xvelocity: 0,
+    yvelocity: 0,
 }
 
 const paddle1 = {
@@ -85,10 +94,12 @@ function ballMovement() {
         paddle2.score += 1
         ball.x = canvas.width/2-ball.size/2
         ball.y = canvas.height/2-ball.size/2
+        ball.xvelocity *= -1
     } else if ((ball.x + ball.size) + ball.xvelocity >= canvas.width - paddle2.width) {
         paddle1.score += 1
         ball.x = canvas.width/2-ball.size/2
         ball.y = canvas.height/2-ball.size/2
+        ball.xvelocity *= -1
     }
 
     if (ball.y + ball.yvelocity <= 0) {
