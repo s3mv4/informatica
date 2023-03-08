@@ -120,6 +120,9 @@ function main() {
     drawRect(ball.x, ball.y, ball.size, ball.size, "#ffffff")
     drawRect(paddle1.x, paddle1.y, paddle1.width, paddle1.height, "#ffffff")
     drawRect(paddle2.x, paddle2.y, paddle2.width, paddle2.height, "#ffffff")
+    drawText(canvas.width/4, 100, paddle1.score, 100, "#ffffff")
+    drawText(canvas.width/4*3, 100, paddle2.score, 100, "#ffffff")
+    drawRect(canvas.width/2-1, 0, 2, canvas.height, "#ffffff")
     ballMovement()
     paddleMovement()
 }
