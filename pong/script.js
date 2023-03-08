@@ -113,7 +113,7 @@ function ballMovement() {
         ball.xvelocity *= -1
         ball.xvelocity = 2
         if (ball.yvelocity < 0) {
-            ball.yvelocity = 2
+            ball.yvelocity = -2
         } else if (ball.yvelocity > 0) {
             ball.yvelocity = 2
         }
@@ -124,7 +124,7 @@ function ballMovement() {
         ball.xvelocity *= -1
         ball.xvelocity = -2
         if (ball.yvelocity < 0) {
-            ball.yvelocity = 2
+            ball.yvelocity = -2
         } else if (ball.yvelocity > 0) {
             ball.yvelocity = 2
         }
