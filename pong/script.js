@@ -82,12 +82,28 @@ function ballMovement() {
         (ball.y + ball.size) + ball.yvelocity >= paddle1.y &&
         ball.x + ball.xvelocity <= (paddle1.x + paddle1.width)) {
         ball.xvelocity *= -1
+        if (ball.xvelocity < 10) {
+            ball.xvelocity += 1
+            if (ball.yvelocity < 0) {
+                ball.yvelocity -= 1
+            } else if (ball.yvelocity > 0) {
+                ball.yvelocity += 1
+            }
+        }
     }
 
     if (ball.y + ball.yvelocity <= (paddle2.y + paddle2.height) &&
         (ball.y + ball.size) + ball.yvelocity >= paddle2.y &&
         (ball.x + ball.size) + ball.xvelocity >= paddle2.x) {
         ball.xvelocity *= -1
+        if (ball.xvelocity > -10) {
+            ball.xvelocity -= 1
+            if (ball.yvelocity < 0) {
+                ball.yvelocity -= 1
+            } else if (ball.yvelocity > 0) {
+                ball.yvelocity += 1
+            }
+        }
     }
 
     if (ball.x + ball.xvelocity <= 0 + paddle1.width) {
@@ -95,11 +111,23 @@ function ballMovement() {
         ball.x = canvas.width/2-ball.size/2
         ball.y = canvas.height/2-ball.size/2
         ball.xvelocity *= -1
+        ball.xvelocity = 2
+        if (ball.yvelocity < 0) {
+            ball.yvelocity = 2
+        } else if (ball.yvelocity > 0) {
+            ball.yvelocity = 2
+        }
     } else if ((ball.x + ball.size) + ball.xvelocity >= canvas.width - paddle2.width) {
         paddle1.score += 1
         ball.x = canvas.width/2-ball.size/2
         ball.y = canvas.height/2-ball.size/2
         ball.xvelocity *= -1
+        ball.xvelocity = -2
+        if (ball.yvelocity < 0) {
+            ball.yvelocity = 2
+        } else if (ball.yvelocity > 0) {
+            ball.yvelocity = 2
+        }
     }
 
     if (ball.y + ball.yvelocity <= 0) {
